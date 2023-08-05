@@ -66,11 +66,15 @@ public class SubcontraptionRigidbody extends AbstractContraptionRigidbody {
     public void applyGlobalImpulse(Vector3d pos, Vector3d velocity) {
         parentRigidbody.applyGlobalImpulse(toParent(pos),velocity);
     }
+
     public Vector3d toParent(Vector3d point);
     {
+
         Vector3d entityOffsetPosition = entity.position().subtract(parentRigidbody.getPlotOffset());
         return entity.applyRotation(point,1).add(entityOffsetPosition);
+
     }
+
     public Vector3d fromParent(Vector3d point);
     {
         Vector3d entityOffsetPosition = entity.position().subtract(parentRigidbody.getPlotOffset());
