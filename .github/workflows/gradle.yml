@@ -6,7 +6,7 @@ jobs:
     strategy:
       matrix:
         java: [ 17-jdk ]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: eclipse-temurin:${{ matrix.java }}
       options: --user root
